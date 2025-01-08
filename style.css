@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  margin: 0;
+}
+
+h1 {
+  color: black;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+.app-title {
+  text-align: center;
+}
+
+.drag-list {
+  display: flex;
+  flex-wrap: wrap; /* Küçük ekranlarda satır kaydırma için */
+}
+
+.drag-container {
+  margin: 20px;
+}
+
+.drag-column {
+  flex: 1;
+  margin: 0 10px;
+  background-color: lightgray;
+  border-radius: 10px;
+  min-width: 250px; /* Dar ekranlarda sütun boyutunu sınırla */
+}
+
+.drag-item {
+  background-color: black;
+  padding: 8px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  line-height: 24px;
+}
+
+.todo-column .header,
+.todo-column .update {
+  background-color: red;
+}
+
+.progress-column .header,
+.progress-column .update {
+  background-color: lightblue;
+}
+
+.done-column .header,
+.done-column .update {
+  background-color: lightgreen;
+}
+
+.header {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+}
+
+.add-btn-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Mobil uyum için */
+}
+
+.add-btn {
+  background: coral;
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.add-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.update {
+  display: none;
+}
+
+.plus-span {
+  font-size: 20px;
+}
+
+.over {
+  padding: 50px 10px; /* Sürükle bırakta yer açılma boyutu */
+}
+
+.add-container {
+  min-height: 100px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: none;
+}
+
+.add-item {
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  color: black;
+  margin: 5px auto;
+  padding: 8px;
+}
+.add-item:focus {
+  outline: none;
+}
+
+/* Mobil cihazlar için düzenlemeler */
+@media (max-width: 768px) {
+  .drag-list {
+    flex-direction: column; /* Sütunları alt alta yerleştir */
+  }
+
+  .drag-column {
+    margin: 10px 0; /* Yatayda yerden tasarruf için */
+  }
+
+  .add-btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .add-btn {
+    margin: 5px 0;
+  }
+
+  .header h1 {
+    font-size: 1rem; /* Başlığı biraz küçült */
+  }
+
+  .drag-item {
+    font-size: 0.9rem; /* Öğelerin yazı boyutunu küçült */
+  }
+}
